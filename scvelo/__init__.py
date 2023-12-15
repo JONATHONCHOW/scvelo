@@ -22,16 +22,16 @@ import sys  # isort:skip
 
 sys.modules.update({f"{__name__}.{m}": globals()[m] for m in ["tl", "pp", "pl"]})
 
-try:
-    from setuptools_scm import get_version
-
-    __version__ = get_version(root="..", relative_to=__file__)
-    del get_version
-except (LookupError, ImportError):
-    from importlib.metadata import version
-
-    __version__ = version(__name__)
-    del version
+# try:
+#     from setuptools_scm import get_version
+#
+#     __version__ = get_version(root="..", relative_to=__file__)
+#     del get_version
+# except (LookupError, ImportError):
+#     from importlib.metadata import version
+#
+#     __version__ = version(__name__)
+#     del version
 
 
 __all__ = [
